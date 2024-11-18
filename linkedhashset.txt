@@ -1,0 +1,215 @@
+HashSet in Java
+A HashSet is a part of the Java Collections Framework and implements the Set interface. It represents a collection that does not allow duplicate elements and does not guarantee any specific order of its elements. This makes HashSet an excellent choice for storing unique items where the order is not important.
+Key Features of HashSet
+No Duplicate Elements: A HashSet automatically ensures that no duplicate entries are added. If you attempt to add a duplicate element, the operation will simply be ignored.
+Unordered Collection: The elements in a HashSet are not stored in any particular order. When you iterate over a HashSet, the order of elements may appear random.
+Performance: Basic operations such as adding, removing, and checking for the presence of an element (using methods like add(), remove(), and contains()) have constant-time performance on average.
+Allows Null Values: A HashSet can contain one null value.
+Basic Operations
+Here are some common operations you can perform with a HashSet:
+Adding Elements: Use add(element) to insert elements into the set.
+Removing Elements: Use remove(element) to delete an element from the set.
+Checking for Existence: Use contains(element) to check if an element exists in the set.
+Iterating Over Elements: You can use loops or iterators to traverse the set.
+Checking Size: Use size() to get the number of elements in the set.
+Code Example
+Here’s an example demonstrating various operations on a HashSet:
+java
+import java.util.HashSet;
+
+public class HashSetExample {
+    public static void main(String[] args) {
+        // Step 1: Create a HashSet
+        HashSet<String> set = new HashSet<>();
+
+        // Step 2: Add elements to the HashSet
+        set.add("Red");
+        set.add("Blue");
+        set.add("Green");
+        set.add("Red"); // Attempting to add a duplicate
+
+        // Step 3: Print the HashSet
+        System.out.println("HashSet: " + set);
+
+        // Step 4: Check if an element exists
+        boolean hasBlue = set.contains("Blue");
+        System.out.println("Contains Blue? " + hasBlue);
+
+        // Step 5: Remove an element
+        set.remove("Green");
+        System.out.println("After removing Green: " + set);
+
+        // Step 6: Check the size of the HashSet
+        int size = set.size();
+        System.out.println("Size of HashSet: " + size);
+
+        // Step 7: Iterate over the elements in the HashSet
+        System.out.println("Iterating over HashSet:");
+        for (String color : set) {
+            System.out.println(color);
+        }
+    }
+}
+
+Explanation of Code Steps
+Creating a HashSet:
+java
+HashSet<String> set = new HashSet<>();
+
+This line creates a new instance of HashSet that will hold String objects.
+Adding Elements:
+java
+set.add("Red");
+set.add("Blue");
+set.add("Green");
+set.add("Red"); // Attempting to add a duplicate
+
+Here, three colors are added to the HashSet. The attempt to add "Red" again demonstrates that duplicates are ignored.
+Printing the HashSet:
+java
+System.out.println("HashSet: " + set);
+
+This prints the contents of the HashSet. Note that the order may vary.
+Checking for Existence:
+java
+boolean hasBlue = set.contains("Blue");
+System.out.println("Contains Blue? " + hasBlue);
+
+This checks if "Blue" is present in the HashSet and prints the result.
+Removing an Element:
+java
+set.remove("Green");
+System.out.println("After removing Green: " + set);
+
+The color "Green" is removed from the HashSet, and the updated contents are printed.
+Checking Size:
+java
+int size = set.size();
+System.out.println("Size of HashSet: " + size);
+
+This retrieves and prints the current number of unique entries in the HashSet.
+Iterating Over Elements:
+java
+for (String color : set) {
+    System.out.println(color);
+}
+
+A for-each loop iterates through all elements in the HashSet, printing each color.
+Conclusion
+The HashSet class in Java provides an efficient way to store collections of unique items without any specific ordering. Its ability to prevent duplicates and its fast performance for basic operations make it a valuable tool for developers when working with sets of data where uniqueness is required. Understanding how to use a HashSet effectively can enhance your ability to manage collections in Java applications.
+4. LinkedHashSet
+A LinkedHashSet maintains a linked list of the entries in the set, which allows for predictable iteration order.
+Code Example:
+java
+import java.util.LinkedHashSet;
+
+public class LinkedHashSetExample {
+    public static void main(String[] args) {
+        LinkedHashSet<String> linkedSet = new LinkedHashSet<>();
+        linkedSet.add("One");
+        linkedSet.add("Two");
+        linkedSet.add("Three");
+
+        System.out.println("LinkedHashSet: " + linkedSet);
+    }
+}
+Answer
+LinkedHashSet in Java
+A LinkedHashSet is a part of the Java Collections Framework and extends the HashSet class. It maintains a linked list of the entries in the set, which allows for predictable iteration order. This means that when you iterate over a LinkedHashSet, the elements will be returned in the order they were added.
+Key Features of LinkedHashSet
+Maintains Insertion Order: Unlike a regular HashSet, a LinkedHashSet preserves the order of elements based on their insertion sequence.
+No Duplicate Elements: Like HashSet, it does not allow duplicate entries.
+Performance: It provides constant-time performance for basic operations like adding, removing, and checking for the presence of an element, similar to HashSet.
+Allows Null Values: A LinkedHashSet can contain one null value.
+Basic Operations
+Here are some common operations you can perform with a LinkedHashSet:
+Adding Elements: Use add(element) to insert elements into the set.
+Removing Elements: Use remove(element) to delete an element from the set.
+Checking for Existence: Use contains(element) to check if an element exists in the set.
+Iterating Over Elements: You can use loops or iterators to traverse the set.
+Checking Size: Use size() to get the number of elements in the set.
+Code Example
+Here’s an example demonstrating various operations on a LinkedHashSet:
+java
+import java.util.LinkedHashSet;
+
+public class LinkedHashSetExample {
+    public static void main(String[] args) {
+        // Step 1: Create a LinkedHashSet
+        LinkedHashSet<String> linkedSet = new LinkedHashSet<>();
+
+        // Step 2: Add elements to the LinkedHashSet
+        linkedSet.add("One");
+        linkedSet.add("Two");
+        linkedSet.add("Three");
+        linkedSet.add("One"); // Attempting to add a duplicate
+
+        // Step 3: Print the LinkedHashSet
+        System.out.println("LinkedHashSet: " + linkedSet);
+
+        // Step 4: Check if an element exists
+        boolean hasTwo = linkedSet.contains("Two");
+        System.out.println("Contains Two? " + hasTwo);
+
+        // Step 5: Remove an element
+        linkedSet.remove("Three");
+        System.out.println("After removing Three: " + linkedSet);
+
+        // Step 6: Check the size of the LinkedHashSet
+        int size = linkedSet.size();
+        System.out.println("Size of LinkedHashSet: " + size);
+
+        // Step 7: Iterate over the elements in the LinkedHashSet
+        System.out.println("Iterating over LinkedHashSet:");
+        for (String number : linkedSet) {
+            System.out.println(number);
+        }
+    }
+}
+
+Explanation of Code Steps
+Creating a LinkedHashSet:
+java
+LinkedHashSet<String> linkedSet = new LinkedHashSet<>();
+
+This line creates a new instance of LinkedHashSet that will hold String objects.
+Adding Elements:
+java
+linkedSet.add("One");
+linkedSet.add("Two");
+linkedSet.add("Three");
+linkedSet.add("One"); // Attempting to add a duplicate
+
+Here, three strings are added to the LinkedHashSet. The attempt to add "One" again demonstrates that duplicates are ignored.
+Printing the LinkedHashSet:
+java
+System.out.println("LinkedHashSet: " + linkedSet);
+
+This prints the contents of the LinkedHashSet, showing that elements are ordered by their insertion sequence.
+Checking for Existence:
+java
+boolean hasTwo = linkedSet.contains("Two");
+System.out.println("Contains Two? " + hasTwo);
+
+This checks if "Two" is present in the LinkedHashSet and prints the result.
+Removing an Element:
+java
+linkedSet.remove("Three");
+System.out.println("After removing Three: " + linkedSet);
+
+The entry for "Three" is removed from the LinkedHashSet, and the updated contents are printed.
+Checking Size:
+java
+int size = linkedSet.size();
+System.out.println("Size of LinkedHashSet: " + size);
+
+This retrieves and prints the current number of unique entries in the LinkedHashSet.
+Iterating Over Elements:
+java
+for (String number : linkedSet) {
+    System.out.println(number);
+}
+
+A for-each loop iterates through all elements in the LinkedHashSet, printing each number.
+Conclusion
+The LinkedHashSet class in Java provides an efficient way to store collections of unique items while maintaining their insertion order. Its ability to prevent duplicates and its predictable iteration order make it a valuable tool for developers when working with sets of data where both uniqueness and order are important. Understanding how to use a LinkedHashSet effectively can enhance your ability to manage collections in Java applications

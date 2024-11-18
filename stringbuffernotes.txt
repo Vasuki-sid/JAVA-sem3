@@ -1,0 +1,151 @@
+## Introduction to StringBuffer in Java
+
+StringBuffer is a mutable sequence of characters in Java, allowing dynamic string manipulation. Unlike the immutable String class, StringBuffer can be modified after creation, making it suitable for scenarios where string content changes frequently.
+
+## Key Features of StringBuffer
+
+- **Mutability**: Strings can be changed without creating new objects.
+- **Thread Safety**: Methods are synchronized, ensuring safe use in multithreaded environments.
+- **Performance**: More efficient for repeated modifications compared to String.
+
+## Syntax and Constructors
+
+The StringBuffer class is declared in the `java.lang` package. It provides several constructors:
+
+1. **Default Constructor**: 
+   ```java
+   StringBuffer sb = new StringBuffer();
+   ```
+   Creates an empty buffer with an initial capacity of 16 characters.
+
+2. **Capacity Constructor**:
+   ```java
+   StringBuffer sb = new StringBuffer(int capacity);
+   ```
+   Initializes a buffer with a specified capacity.
+
+3. **String Constructor**:
+   ```java
+   StringBuffer sb = new StringBuffer(String str);
+   ```
+   Initializes a buffer containing the specified string.
+
+4. **CharSequence Constructor**:
+   ```java
+   StringBuffer sb = new StringBuffer(CharSequence seq);
+   ```
+   Initializes a buffer with the same characters as the provided CharSequence.
+
+## Important Methods
+
+### 1. append()
+Adds characters to the end of the buffer.
+```java
+StringBuffer sb = new StringBuffer("Hello");
+sb.append(" World!");
+System.out.println(sb); // Output: Hello World!
+```
+
+### 2. insert()
+Inserts characters at a specified index.
+```java
+StringBuffer sb = new StringBuffer("Hello");
+sb.insert(5, " World");
+System.out.println(sb); // Output: Hello World
+```
+
+### 3. delete()
+Removes characters within a specified range.
+```java
+StringBuffer sb = new StringBuffer("Hello World");
+sb.delete(5, 11);
+System.out.println(sb); // Output: Hello
+```
+
+### 4. replace()
+Replaces characters between specified indices.
+```java
+StringBuffer sb = new StringBuffer("Hello World");
+sb.replace(6, 11, "Java");
+System.out.println(sb); // Output: Hello Java
+```
+
+### 5. reverse()
+Reverses the character sequence.
+```java
+StringBuffer sb = new StringBuffer("Hello");
+sb.reverse();
+System.out.println(sb); // Output: olleH
+```
+
+### 6. length()
+Returns the number of characters in the buffer.
+```java
+StringBuffer sb = new StringBuffer("Hello");
+System.out.println(sb.length()); // Output: 5
+```
+
+### 7. capacity()
+Returns the current capacity of the buffer.
+```java
+StringBuffer sb = new StringBuffer();
+System.out.println(sb.capacity()); // Output: 16 (default)
+```
+
+## Example Programs
+
+### Example 1: Basic Operations with StringBuffer
+```java
+public class Main {
+    public static void main(String[] args) {
+        StringBuffer sb = new StringBuffer("Java");
+        sb.append(" Programming");
+        System.out.println(sb); // Output: Java Programming
+
+        sb.insert(4, " is fun");
+        System.out.println(sb); // Output: Java is fun Programming
+
+        sb.replace(0, 4, "Python");
+        System.out.println(sb); // Output: Python is fun Programming
+
+        sb.delete(7, 10);
+        System.out.println(sb); // Output: Python fun Programming
+
+        sb.reverse();
+        System.out.println(sb); // Output: gnimmargorP nuf nohtyP
+    }
+}
+```
+
+### Example 2: Comparing String and StringBuffer
+```java
+public class Compare {
+    public static void main(String[] args) {
+        String str1 = "Hello";
+        String str2 = "Hello";
+
+        System.out.println(str1 == str2); // true (same reference)
+
+        StringBuffer sb1 = new StringBuffer("Hello");
+        StringBuffer sb2 = new StringBuffer("Hello");
+
+        System.out.println(sb1 == sb2); // false (different references)
+        System.out.println(sb1.equals(sb2)); // false (not overridden)
+    }
+}
+```
+
+## Conclusion
+
+The StringBuffer class provides a flexible way to handle strings in Java, especially when modifications are frequent. Its thread-safe nature makes it ideal for concurrent applications, while its methods facilitate various string operations efficiently. Understanding when and how to use StringBuffer is crucial for effective Java programming, particularly in performance-sensitive applications.
+
+Sources
+[1] StringBuffer Class in Java with Example - Scientech Easy https://www.scientecheasy.com/2020/05/stringbuffer-class-in-java.html/
+[2] Java StringBuffer Class with Example - TechVidvan https://techvidvan.com/tutorials/java-stringbuffer-class/
+[3] Java StringBuffer: Methods, Examples, and Performance Tips https://www.javaguides.net/2019/09/java-stringbuffer-tutorial-with-examples.html
+[4] Java StringBuffer class - Javatpoint https://www.javatpoint.com/StringBuffer-class
+[5] Java StringBuffer Tutorial with Examples - Java Code Examples https://www.javacodeexamples.com/java-stringbuffer-tutorial-with-examples/1620
+[6] StringBuffer class in Java https://prutor.ai/stringbuffer-class-in-java/
+[7] StringBuffer In Java: 11 Popular Methods Every Java Developer Should Know | upGrad blog https://www.upgrad.com/blog/stringbuffer-in-java/
+[8] input using stringbuffer | Code Ease https://www.codeease.net/programming/java/input-using-stringbuffer
+

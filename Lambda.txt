@@ -1,0 +1,133 @@
+Mapping in Java refers to the process of representing objects in a relational database, often facilitated by Object-Relational Mapping (ORM) frameworks such as Hibernate or Java Persistence API (JPA). This allows developers to work with database entities as Java objects, simplifying data manipulation and retrieval.
+Key Concepts of Mapping
+1. Entity Classes
+Entity classes are Java classes that represent tables in a database. Each instance of an entity class corresponds to a row in the table, and the fields of the class correspond to the columns.
+Example:
+java
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Student {
+    @Id
+    private int id;
+    private String name;
+
+    // Constructors
+    public Student() {}
+
+    public Student(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    // Getters and Setters
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+
+In this example, the Student class is an entity that maps to a "students" table in the database.
+2. Annotations
+Annotations are used to define how classes and their fields map to database tables and columns. Common annotations include @Entity, @Table, @Id, and @Column.
+Example:
+java
+import javax.persistence.*;
+
+@Entity
+@Table(name = "students")
+public class Student {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @Column(name = "student_name")
+    private String name;
+
+    // Getters and Setters...
+}
+
+Here, @Table specifies the table name, @Id marks the primary key, and @Column specifies the column name in the database.
+3. Relationships
+Relationships define how entities relate to each other in a database. Common types include one-to-many, many-to-one, and many-to-many.
+Example: One-to-Many Relationship
+java
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
+public class Course {
+    @Id
+    private int courseId;
+
+    private String courseName;
+
+    @OneToMany(mappedBy = "course")
+    private List<Student> students;
+
+    // Getters and Setters...
+}
+
+@Entity
+public class Student {
+    @Id
+    private int id;
+
+    private String name;
+
+    @ManyToOne
+    @JoinColumn(name = "course_id")
+    private Course course;
+
+    // Getters and Setters...
+}
+
+In this example, each Course can have multiple Student entities associated with it, demonstrating a one-to-many relationship.
+Lambda Expressions
+Lambda expressions in Java are a feature that allows for more concise representation of instances of single-method interfaces (functional interfaces). They provide a clear and expressive way to implement functional programming concepts.
+Syntax of Lambda Expressions
+The syntax for lambda expressions is as follows:
+java
+(parameters) -> expression
+
+or
+java
+(parameters) -> { statements; }
+
+Code Example
+java
+import java.util.Arrays;
+import java.util.List;
+
+public class LambdaExample {
+    public static void main(String[] args) {
+        List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+
+        // Using lambda expression to print names
+        names.forEach(name -> System.out.println(name));
+
+        // Another example with multiple statements
+        names.forEach(name -> {
+            System.out.println("Name: " + name);
+            System.out.println("Length: " + name.length());
+        });
+    }
+}
+
+In this example:
+The first lambda expression prints each name from the list.
+The second example demonstrates using multiple statements within a lambda expression to print both the name and its length.
+Conclusion
+Mapping in Java facilitates seamless interaction between Java objects and relational databases through ORM frameworks. Understanding entity classes, annotations, and relationships is essential for effective data management. Meanwhile, lambda expressions enhance code readability and conciseness when working with functional interfaces. Together, these concepts enable developers to build robust applications that effectively manage data persistence and manipulation.

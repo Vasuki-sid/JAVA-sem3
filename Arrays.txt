@@ -1,0 +1,7 @@
+//programs using array -_-
+Questions:
+1)read 10 int,find avg and find count<avg 
+2)print all distinct elements in an array 
+3)assume input can become palindrome if only 1 digit is removed from the number 
+4)find the missing value in the arry consisting of an arithmetic progression
+in a non decreasing ordered array and find majority element 

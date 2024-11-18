@@ -1,0 +1,102 @@
+Stack in Java
+A Stack is a data structure that follows the Last-In-First-Out (LIFO) principle, meaning that the last element added to the stack is the first one to be removed. In Java, the Stack class extends Vector and provides methods that allow it to be treated as a stack.
+Key Features of Stack
+LIFO Structure: The last element added is the first one to be removed.
+Dynamic Sizing: Like an ArrayList, a Stack can grow and shrink dynamically as elements are added or removed.
+Thread Safety: The Stack class is synchronized, which means it is thread-safe for use in multi-threaded environments.
+Common Operations: The primary operations include pushing an element onto the stack, popping an element from the top of the stack, and peeking at the top element without removing it.
+Basic Operations
+Here are some common operations you can perform with a Stack:
+Push: Use push(element) to add an element to the top of the stack.
+Pop: Use pop() to remove and return the top element of the stack.
+Peek: Use peek() to retrieve the top element without removing it.
+Check if Empty: Use isEmpty() to check if the stack is empty.
+Size: Use size() to get the number of elements in the stack.
+Code Example
+Here’s an example demonstrating various operations on a Stack:
+java
+import java.util.Stack;
+
+public class StackExample {
+    public static void main(String[] args) {
+        // Step 1: Create a Stack
+        Stack<Integer> stack = new Stack<>();
+
+        // Step 2: Push elements onto the Stack
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+
+        // Step 3: Print the Stack
+        System.out.println("Stack: " + stack);
+
+        // Step 4: Peek at the top element
+        int topElement = stack.peek();
+        System.out.println("Top element (peek): " + topElement);
+
+        // Step 5: Pop an element from the Stack
+        int poppedElement = stack.pop();
+        System.out.println("Popped element: " + poppedElement);
+
+        // Step 6: Print the Stack after popping
+        System.out.println("Stack after popping: " + stack);
+
+        // Step 7: Check if the Stack is empty
+        boolean isEmpty = stack.isEmpty();
+        System.out.println("Is Stack empty? " + isEmpty);
+
+        // Step 8: Check size of the Stack
+        int size = stack.size();
+        System.out.println("Size of Stack: " + size);
+    }
+}
+
+Explanation of Code Steps
+Creating a Stack:
+java
+Stack<Integer> stack = new Stack<>();
+
+This line creates a new instance of Stack that will hold Integer objects.
+Pushing Elements:
+java
+stack.push(1);
+stack.push(2);
+stack.push(3);
+
+Here, three integers are pushed onto the stack.
+Printing the Stack:
+java
+System.out.println("Stack: " + stack);
+
+This prints the contents of the stack, showing all elements in LIFO order.
+Peeking at Top Element:
+java
+int topElement = stack.peek();
+System.out.println("Top element (peek): " + topElement);
+
+The peek() method retrieves (but does not remove) the top element of the stack.
+Popping an Element:
+java
+int poppedElement = stack.pop();
+System.out.println("Popped element: " + poppedElement);
+
+The pop() method removes and returns the top element from the stack.
+Printing Stack After Popping:
+java
+System.out.println("Stack after popping: " + stack);
+
+This prints the contents of the stack after one element has been popped.
+Checking if Empty:
+java
+boolean isEmpty = stack.isEmpty();
+System.out.println("Is Stack empty? " + isEmpty);
+
+This checks if there are any elements left in the stack and prints whether it is empty.
+Checking Size:
+java
+int size = stack.size();
+System.out.println("Size of Stack: " + size);
+
+This retrieves and prints the current number of elements in the stack.
+Conclusion
+The Stack class in Java provides a straightforward way to manage data with LIFO semantics. Its ability to dynamically resize and its built-in methods for common operations make it a useful data structure for scenarios where you need to keep track of items in reverse order, such as in undo mechanisms or parsing expressions. Understanding how to use a Stack effectively can enhance your ability to manage temporary data in Java applications.

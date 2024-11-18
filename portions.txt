@@ -1,0 +1,112 @@
+Portions for java skill test 
+1)programs using arrays 
+2)programs using StringBuffer
+3)programs using inheritance 
+4)Exception handling 
+Quick revision notes :
+## Basic Structure
+### Java Program Structure
+- Class Declaration: Every Java program must have at least one class. The class name should start with an uppercase letter.
+- Main Method: The entry point of any Java application is the `main` method, defined as:
+  ```
+  public static void main(String[] args) {
+      // Code to be executed
+  }
+  ```
+### Example
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}
+## Syntax Rules
+Case Sensitive
+Naming Conventions
+-Class Names: Should start with an uppercase letter. For example:
+- Method Names: Should start with a lowercase letter. For example:
+### Comments
+- **Single-line Comment**: 
+  ```java
+  // This is a single-line comment
+  ```
+- **Multi-line Comment**: 
+  ```java
+  /* This is a 
+     multi-line comment */
+  ```
+- **Documentation Comment**: 
+  ```java
+  /** This is a documentation comment */
+  ```
+## Data Types
+### Primitive Data Types
+- **int**: Integer type (4 bytes)
+- **byte**: Byte type (1 byte)
+- **short**: Short integer type (2 bytes)
+- **long**: Long integer type (8 bytes)
+- **float**: Floating-point type (4 bytes)
+- **double**: Double precision floating-point type (8 bytes)
+- **char**: Character type (2 bytes)
+- **boolean**: Holds true or false values
+### Example of Variable Declaration
+```java
+int number = 10;
+boolean isTrue = true;
+char letter = 'A';
+```
+## Control Structures
+### Conditional Statements
+#### Switch Statement
+```java
+switch (variable) {
+    case value1:
+        // Code for case value1
+        break;
+    case value2:
+        // Code for case value2
+        break;
+    default:
+        // Default code if no cases match
+}
+```
+### Loops
+#### For Loop
+```java
+for (int i = 0; i < 10; i++) {
+    System.out.println(i);
+}
+```
+
+#### While Loop
+```java
+while (condition) {
+    // Code to execute while condition is true
+}
+```
+## Access Modifiers
+Access modifiers control the visibility of classes, methods, and variables:
+
+| Modifier   | Within Class | Within Package | Subclass | Outside Package |
+|------------|--------------|----------------|----------|----------------|
+| private    | Yes          | No             | No       | No             |
+| default    | Yes          | Yes            | No       | No             |
+| protected  | Yes          | Yes            | Yes      | No             |
+| public     | Yes          | Yes            | Yes      | Yes            |
+
+## Keywords
+Java has reserved keywords that cannot be used as identifiers. Here are some important ones:
+- **abstract**: Used to declare an abstract class or method.
+- **assert**: Used for debugging purposes.
+- **break**: Exits a loop or switch statement.
+- **catch**: Used to handle exceptions.
+- **class**: Declares a class.
+- **static**: Indicates that a method or variable belongs to the class rather than instances of the class.
+
+### Example of Exception Handling with Try-Catch
+```java
+try {
+    // Code that may throw an exception
+} catch (ExceptionType e) {
+    // Handle exception here
+}
+```

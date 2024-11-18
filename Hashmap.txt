@@ -1,0 +1,97 @@
+HashMap in Java
+A HashMap is part of the Java Collections Framework and is used to store data in key-value pairs. It allows for efficient data retrieval, insertion, and deletion operations. The keys in a HashMap must be unique, and each key maps to exactly one value. If a key is inserted again with a different value, the old value associated with that key will be replaced.
+Key Features of HashMap
+Key-Value Pair Storage: Each entry in a HashMap consists of a key and a corresponding value.
+No Duplicate Keys: A HashMap does not allow duplicate keys; if you try to insert a duplicate key, the new value will overwrite the old one.
+Constant-Time Performance: Basic operations such as adding, removing, and accessing elements are performed in constant time on average.
+Null Values: A HashMap allows one null key and multiple null values.
+Basic Operations
+Here are some common operations you can perform with a HashMap:
+Adding Elements: Use put(key, value) to insert key-value pairs.
+Accessing Elements: Use get(key) to retrieve the value associated with a specific key.
+Removing Elements: Use remove(key) to delete an entry by its key.
+Checking Size: Use size() to get the number of entries in the map.
+Iterating Over Entries: You can use loops or iterators to traverse the entries.
+Code Example
+Here’s an example demonstrating various operations on a HashMap:
+java
+import java.util.HashMap;
+
+public class HashMapExample {
+    public static void main(String[] args) {
+        // Step 1: Create a HashMap
+        HashMap<String, Integer> map = new HashMap<>();
+
+        // Step 2: Add key-value pairs to the HashMap
+        map.put("Alice", 30);
+        map.put("Bob", 25);
+        map.put("Charlie", 35);
+
+        // Step 3: Print the HashMap
+        System.out.println("HashMap: " + map);
+
+        // Step 4: Access a value using a key
+        int ageOfAlice = map.get("Alice");
+        System.out.println("Alice's age: " + ageOfAlice);
+
+        // Step 5: Remove an entry
+        map.remove("Bob");
+        System.out.println("After removing Bob: " + map);
+
+        // Step 6: Check the size of the HashMap
+        int size = map.size();
+        System.out.println("Size of HashMap: " + size);
+
+        // Step 7: Iterate over the entries in the HashMap
+        System.out.println("Iterating over HashMap:");
+        for (String name : map.keySet()) {
+            System.out.println(name + ": " + map.get(name));
+        }
+    }
+}
+
+Explanation of Code Steps
+Creating a HashMap:
+java
+HashMap<String, Integer> map = new HashMap<>();
+
+This line creates a new instance of HashMap that will hold keys of type String and values of type Integer.
+Adding Key-Value Pairs:
+java
+map.put("Alice", 30);
+map.put("Bob", 25);
+map.put("Charlie", 35);
+
+Here, three entries are added to the HashMap, associating names with their respective ages.
+Printing the HashMap:
+java
+System.out.println("HashMap: " + map);
+
+This prints the entire contents of the HashMap.
+Accessing a Value:
+java
+int ageOfAlice = map.get("Alice");
+System.out.println("Alice's age: " + ageOfAlice);
+
+The age associated with the key "Alice" is retrieved and printed.
+Removing an Entry:
+java
+map.remove("Bob");
+System.out.println("After removing Bob: " + map);
+
+The entry for "Bob" is removed from the HashMap, and the updated contents are printed.
+Checking Size:
+java
+int size = map.size();
+System.out.println("Size of HashMap: " + size);
+
+This retrieves and prints the current number of entries in the HashMap.
+Iterating Over Entries:
+java
+for (String name : map.keySet()) {
+    System.out.println(name + ": " + map.get(name));
+}
+
+A for-each loop iterates through all keys in the HashMap, printing each key along with its corresponding value.
+Conclusion
+The HashMap class in Java provides an efficient way to store and manage data as key-value pairs. Its fast access times and flexibility make it an essential tool for developers working with collections of data that require quick lookups and modifications. Understanding how to use a HashMap effectively can significantly enhance your ability to manage data in Java applications.

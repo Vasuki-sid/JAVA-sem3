@@ -1,0 +1,143 @@
+STRING AND STRING BUFFER
+
+Quick Notes on String and StringBuffer
+String
+Immutable: Once created, the value of a String object cannot be changed. Any                     modification creates a new String object.
+Memory Efficient: Uses a string pool to save memory.
+Common Methods:
+    length(): Returns the length of the string.
+    charAt(int index): Returns the character at the specified index.
+    substring(int beginIndex, int endIndex): Returns a substring from the string.
+    toUpperCase(): Converts the string to uppercase.
+    toLowerCase(): Converts the string to lowercase.
+    indexOf(String str): Returns the index of the first occurrence of the specified substring.
+    split(String regex): Splits the string into an array based on a regular expression.
+Example
+java
+String str = "hello";
+String upperStr = str.toUpperCase(); // HELLO
+
+StringBuffer
+    Mutable: Allows modification of its contents without creating new objects.
+    Thread-Safe: Synchronization makes it safe for use in multi-threaded environments.
+    Common Methods:
+      append(String str): Adds a string to the end of the buffer.
+      insert(int offset, String str): Inserts a string at a specified position.
+      delete(int start, int end): Removes characters from the buffer.
+      reverse(): Reverses the characters in the buffer.
+      toString(): Converts the StringBuffer to a String.
+Example
+java
+StringBuffer sb = new StringBuffer("hello");
+sb.append(" world"); // hello world
+
+Syntax and Explanation
+String Syntax
+java
+String variableName = "value"; // Declaration and initialization
+
+Strings can be concatenated using the + operator:
+java
+String fullName = firstName + " " + lastName;
+
+StringBuffer Syntax
+java
+StringBuffer sb = new StringBuffer(); // Create an empty StringBuffer
+sb.append("text"); // Append text to StringBuffer
+
+Questions:
+  Program 1
+
+Given a String input1, which contains many number of words separated by : and each word
+contains exactly two lower case alphabets, generate an output based upon the below 2
+cases.
+Note:
+1. All the characters in input 1 are lowercase alphabets.
+2. input 1 will always contain more than one word separated by :
+3. Output should be returned in uppercase.
+Case 1:
+Check whether the two alphabets are same.
+If yes, then take one alphabet from it and add it to the output.
+Example 1:
+input1 = ww:ii:pp:rr:oo
+output = WIPRO
+Explanation:
+word1 is ww, both are same hence take w
+word2 is ii, both are same hence take i
+word3 is pp, both are same hence take p
+word4 is rr, both are same hence take r
+word5 is oo, both are same hence take o
+Hence the output is WIPRO
+Case 2:
+If the two alphabets are not same, then find the position value of them and find maximum
+value – minimum value.
+Take the alphabet which comes at this (maximum value - minimum value) position in the
+alphabet series.
+Example 2”
+input1 = zx:za:ee
+output = BYE
+
+Explanation
+word1 is zx, both are not same alphabets
+position value of z is 26
+position value of x is 24
+max – min will be 26 – 24 = 2
+Alphabet which comes in 2 nd  position is b
+Word2 is za, both are not same alphabets
+position value of z is 26
+position value of a is 1
+max – min will be 26 – 1 = 25
+Alphabet which comes in 25 th  position is y
+word3 is ee, both are same hence take e
+Hence the output is BYE
+
+Program 2
+Radha has been given a set of words and has been asked to find the count of ordered words
+in it. An ordered word is a word in which the letters appear in same or increasing order of
+their ASCII value. Please help Radha to find a solution for this. 
+Return 0 if there are no ordered words in the input String.
+Note: 
+1.      input1 contains words separated by a single whitespace.
+2.      The words can contain both upper and lower case alphabets.
+3.      ASCII value comparison should be done by considering the cases.
+Example 1:
+input1: accept Van
+output: 2
+Explanation:
+In input1, accept and Van both are ordered words.
+Hence, output is 2.
+
+Example 2:
+input1: World
+output: 0
+Explanation:
+In input1, World is not an ordered word.
+Hence, output is 0.
+
+Program 3:
+
+Given two Strings input1 and input2 consisting of random alphabets, find whether all the
+alphabets in input1 are in either increasing or decreasing order based on their ASCII value.
+For example,
+input1 = “ACZa”, its in increasing order (65, 67, 90, 97).
+input1 = “tbGB”, its in decreasing order (116, 98, 71, 66).
+In case if input1 is not in either increasing or decreasing order, directly return Invalid.
+After deciding input1 as increasing or decreasing; consider input2 which consist of the same
+alphabets which are in input1, but the order of the alphabets may change.
+For example,
+input1 = “ACZa” input2 = “CAZa” here ‘C’ and ‘A’ are misplaced in input2, so the count of
+alphabets which are misplaced is 2.
+Input1 = “tbGB” input2 = “tGBb” here ‘G’, ‘B’, ‘b’ are misplaced in input2, so the count of
+alphabets which are misplaced is 3.
+Expected output format: &lt;Increasing or Decreasing&gt;:count of alphabets which are misplaced
+in input2.
+Example 1:
+input1: ACZa
+input2: CAZa
+output: Increasing:2
+Example 2:
+input1: tbGB
+input2: tGBb
+output: Decreasing:3
+
+

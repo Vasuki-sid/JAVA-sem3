@@ -1,0 +1,10 @@
+Portions covered in this test 
+1)Collections 
+  -ArrayList
+  -Stack
+  -Hash Set
+  -LinkedHashSet
+  -HashMap
+2)JDBC connectivity 
+3)Mapping 
+4)lambda Expression
